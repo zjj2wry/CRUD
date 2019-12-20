@@ -8,7 +8,7 @@ class Student{
 }
 //增
 function add($obj){
-	$connect = mysqli_connect("localhost","root","123456","itcast");
+	$connect = mysqli_connect("localhost","root","","itcast");
 	mysqli_set_charset($connect,"utf-8");
 	$sql = "INSERT INTO user(name,gender,age,edu) VALUES ('{$obj->name}','{$obj->gender}',{$obj->age},{$obj->edu})";
 	$res = mysqli_query($connect,$sql);
@@ -16,7 +16,7 @@ function add($obj){
 }
 //删
 function del($id){
-	$connect = mysqli_connect("localhost","root","123456","itcast");
+	$connect = mysqli_connect("localhost","root","","itcast");
 	mysqli_set_charset($connect,"utf-8");
 	$sql = "DELETE FROM user where id={$id}";
 	$res = mysqli_query($connect,$sql);
@@ -24,14 +24,14 @@ function del($id){
 }
 //改
 function update($obj){
-	$connect = mysqli_connect("localhost","root","123456","itcast");
+	$connect = mysqli_connect("localhost","root","","itcast");
 	mysqli_set_charset($connect,"utf-8");
 	$sql = "UPDATE user SET name='{$obj->name}',age={$obj->age},gender='{$obj->gender}',edu={$obj->edu} WHERE id = {$obj->id}";
 	$res = mysqli_query($connect,$sql);
 	return $res;
 }
 function getAllData(){
-	$connect = mysqli_connect("localhost","root","123456","itcast");
+	$connect = mysqli_connect("localhost","root","","itcast");
 	mysqli_set_charset($connect,"utf-8");
 	$sql = "SELECT * FROM user";
 	$res = mysqli_query($connect,$sql);
@@ -54,7 +54,7 @@ function getAllData(){
 	return $objArr;
 }
 function getDataById($id){
-	$connect = mysqli_connect("localhost","root","123456","itcast");
+	$connect = mysqli_connect("localhost","root","","itcast");
 	mysqli_set_charset($connect,"utf-8");
 	$sql = "SELECT * FROM user WHERE id = ".$id;
 	$res = mysqli_query($connect,$sql);
